@@ -1,5 +1,8 @@
 Revision history for IPC-RunExternal
 
+0.02    2011-Aug-09
+		Removed dependence from module Readonly.
+
 0.01    Date/time
         First version, released on an unsuspecting world.
 

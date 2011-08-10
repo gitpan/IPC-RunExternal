@@ -87,13 +87,12 @@ use Carp 'croak';
 use IPC::Open3;
 use IO::Select; # for select
 use Symbol 'gensym'; # for gensym
-use Readonly 'Scalar';
 
 BEGIN {
 	use Exporter ();
 	our ($VERSION, @ISA, @EXPORT, @EXPORT_OK, %EXPORT_TAGS);
 
-	$VERSION     = 0.01;
+	$VERSION     = 0.02;
 
 	@ISA         = qw(Exporter DynaLoader);
 	@EXPORT      = qw(runexternal);
@@ -103,16 +102,16 @@ BEGIN {
 our @EXPORT_OK;
 
 # CONSTANTS for this module
-Readonly::Scalar my $TRUE => 1;
-Readonly::Scalar my $FALSE => 0;
-Readonly::Scalar my $EMPTY_STR => q{};
+my $TRUE = 1;
+my $FALSE = 0;
+my $EMPTY_STR = q{};
 
-Readonly::Scalar my $DEFAULT_PRINT_PROGRESS_INDICATOR => $FALSE;
-Readonly::Scalar my $DEFAULT_PROGRESS_INDICATOR_CHARACTER => q{.};
-Readonly::Scalar my $DEFAULT_EXECUTE_EVERY_SECOND_ROUTINE_POINTER => $FALSE;
-Readonly::Scalar my $EXIT_STATUS_OK => 1;
-Readonly::Scalar my $EXIT_STATUS_TIMEOUT => 0;
-Readonly::Scalar my $EXIT_STATUS_FAILED => -1;
+my $DEFAULT_PRINT_PROGRESS_INDICATOR = $FALSE;
+my $DEFAULT_PROGRESS_INDICATOR_CHARACTER = q{.};
+my $DEFAULT_EXECUTE_EVERY_SECOND_ROUTINE_POINTER = $FALSE;
+my $EXIT_STATUS_OK = 1;
+my $EXIT_STATUS_TIMEOUT = 0;
+my $EXIT_STATUS_FAILED = -1;
 
 # GLOBALS
 # No global variables
