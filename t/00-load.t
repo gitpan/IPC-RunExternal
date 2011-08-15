@@ -35,6 +35,7 @@ my $allout = $EMPTY_STR;
 
 #goto last_test;
 	can_ok('IPC::RunExternal', 'runexternal');
+	# 2
 
 	$ENV{"PATH"} = ""; # Testing in tainted mode (-T)
 	$ENV{"ENV"} = ""; # Testing in tainted mode (-T)
@@ -42,14 +43,13 @@ my $allout = $EMPTY_STR;
 	#isnt(runexternal(undef, $EMPTY_STR, 3), -1, "Invalid parameter causes failure (command)");
 	#isnt(runexternal('date', 1, 3), -1, "Invalid parameter causes failure (input 1)");
 	#isnt(runexternal('date', 1, -1), -1, "Invalid parameter causes failure (timeout)");
-	# 3
 
 	$ENV{"PATH"} = ""; # Testing in tainted mode (-T)
 	$ENV{"ENV"} = ""; # Testing in tainted mode (-T)
-	($exit_code, $stdout, $stderr, $allout) = runexternal('./qwert', $EMPTY_STR, 2);
-	is($exit_code, $EXIT_STATUS_OK,                   "qwert Test result failure (1)");
-	is($stdout, '',                                   "qwert Test result failure (2)");
-	like($stderr, '/No such file or directory/',      "qwert Test result failure (3)");
+	($exit_code, $stdout, $stderr, $allout) = runexternal('./non_existing_command', $EMPTY_STR, 2);
+	is($exit_code, $EXIT_STATUS_OK,                   "non_existing_command Test result failure (1)");
+	is($stdout, '',                                   "non_existing_command Test result failure (2)");
+	like($stderr, '/.*/',                             "non_existing_command Test result failure (3)"); # The error message is system and shell specific!
 	#like($stderr, '/No such file or directory/xmsg', "qwert Test result failure (4)");
 	# 5
 
@@ -88,7 +88,7 @@ my $allout = $EMPTY_STR;
 	#like($stdout, '/Going to run for 5 secs. Printing to STDOUT and STDERR./',          "TestRunExternal_01.pl Timeout result (2)");
 	like($stderr, '/Timeout/',          "TestRunExternal_01.pl Timeout result (3)");
 	like($stderr, '/to STDERR/',          "TestRunExternal_01.pl Timeout result (3)");
-	like($allout, '/.*Timeout*/',          "TestRunExternal_01.pl Timeout result (4)");
+	like($allout, '/.*Timeout.*/',          "TestRunExternal_01.pl Timeout result (4)");
 	# 18
 
 	$ENV{"PATH"} = ""; # Testing in tainted mode (-T)
@@ -104,14 +104,14 @@ my $allout = $EMPTY_STR;
 
 	$ENV{"PATH"} = ""; # Testing in tainted mode (-T)
 	$ENV{"ENV"} = ""; # Testing in tainted mode (-T)
-	($exit_code, $stdout, $stderr, $allout) = runexternal('t/TestRunExternal_01.pl loop 6', $EMPTY_STR, 3, 
+	($exit_code, $stdout, $stderr, $allout) = runexternal('t/TestRunExternal_01.pl loop 6', $EMPTY_STR, 1, 
 			{ #print_progress_indicator => $TRUE,
 				progress_indicator_char => '#'
 			});
 	#print " END PROGRESS...\n";
 	is($exit_code, $EXIT_STATUS_TIMEOUT,                                 "TestRunExternal_01.pl loop 6 Timeout + progress_ind # result (1)");
 	#like($stdout, '/STDOUT:6/',          "TestRunExternal_01.pl loop 6 Timeout + progress_ind # result (2)");
-	like($stderr, '/.*Timeout*/',          "TestRunExternal_01.pl loop 6 Timeout + progress_ind # result (3)");
+	like($stderr, '/.*Timeout.*/',          "TestRunExternal_01.pl loop 6 Timeout + progress_ind # result (3)");
 	# 23
 
 	is(length($stdout) + length($stderr), length($allout), "TestRunExternal_01.pl output OK Timeout result (4)");

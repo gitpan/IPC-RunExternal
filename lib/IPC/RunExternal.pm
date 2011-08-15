@@ -2,12 +2,12 @@ package IPC::RunExternal;
 
 =head1 NAME
 
-IPC::RunExternal - The great new IPC::RunExternal!
+IPC::RunExternal - Execute external (shell) command and gather stdout and stderr!
 
 
 =head1 VERSION
 
-Version 0.01
+Version 0.03
 
 
 =head1 SYNOPSIS
@@ -46,7 +46,7 @@ Version 0.01
 =head1 DESCRIPTION
 
 IPC::RunExternal is for executing external operating system programs 
-more conveniently that with `` and without all the hassle of IPC::Open3.
+more conveniently that with `` (backticks) or exec/system, and without all the hassle of IPC::Open3.
 
 IPC::RunExternal allows:
 1) Capture STDOUT and STDERR in scalar variables.
@@ -92,7 +92,7 @@ BEGIN {
 	use Exporter ();
 	our ($VERSION, @ISA, @EXPORT, @EXPORT_OK, %EXPORT_TAGS);
 
-	$VERSION     = 0.02;
+	$VERSION     = 0.03;
 
 	@ISA         = qw(Exporter DynaLoader);
 	@EXPORT      = qw(runexternal);
