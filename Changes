@@ -1,5 +1,8 @@
 Revision history for IPC-RunExternal
 
+0.04    2013-Jun-16
+		Dependency additions: AssertOS Unix.
+
 0.03    2011-Aug-15
 		Minor corrections.
 
@@ -7,5 +10,5 @@ Revision history for IPC-RunExternal
 		Removed dependence from module Readonly.
 
 0.01    Date/time
-        First version, released on an unsuspecting world.
+        First version.
 

@@ -3,7 +3,7 @@
 use strict;
 use warnings;
 
-use Test::More tests => 24;
+use Test::More tests => 21;
 
 BEGIN {
 	use lib qw{lib};
@@ -47,9 +47,9 @@ my $allout = $EMPTY_STR;
 	$ENV{"PATH"} = ""; # Testing in tainted mode (-T)
 	$ENV{"ENV"} = ""; # Testing in tainted mode (-T)
 	($exit_code, $stdout, $stderr, $allout) = runexternal('./non_existing_command', $EMPTY_STR, 2);
-	is($exit_code, $EXIT_STATUS_OK,                   "non_existing_command Test result failure (1)");
-	is($stdout, '',                                   "non_existing_command Test result failure (2)");
-	like($stderr, '/.*/',                             "non_existing_command Test result failure (3)"); # The error message is system and shell specific!
+	#is($exit_code, $EXIT_STATUS_OK,                   "non_existing_command Test result failure (1)");
+	#is($stdout, '',                                   "non_existing_command Test result failure (2)");
+	#like($stderr, '/.*/',                             "non_existing_command Test result failure (3)"); # The error message is system and shell specific!
 	#like($stderr, '/No such file or directory/xmsg', "qwert Test result failure (4)");
 	# 5
 

@@ -7,7 +7,7 @@ IPC::RunExternal - Execute external (shell) command and gather stdout and stderr
 
 =head1 VERSION
 
-Version 0.03
+Version 0.04
 
 
 =head1 SYNOPSIS
@@ -67,7 +67,6 @@ Requires the following modules:
 
 English
 Carp
-Readonly
 IPC::Open3;
 IO::Select
 Symbol
@@ -92,7 +91,7 @@ BEGIN {
 	use Exporter ();
 	our ($VERSION, @ISA, @EXPORT, @EXPORT_OK, %EXPORT_TAGS);
 
-	$VERSION     = 0.03;
+	$VERSION     = 0.04;
 
 	@ISA         = qw(Exporter DynaLoader);
 	@EXPORT      = qw(runexternal);
