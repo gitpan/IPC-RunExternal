@@ -1,5 +1,8 @@
 Revision history for IPC-RunExternal
 
+0.05    2013-Jun-17
+		Change in MANIFEST.
+
 0.04    2013-Jun-16
 		Dependency additions: AssertOS Unix.
 
