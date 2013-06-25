@@ -12,8 +12,8 @@ BEGIN {
 
 diag( "Testing IPC::RunExternal $IPC::RunExternal::VERSION, Perl $], $^X" );
 
-use lib qw{lib};
-use IPC::RunExternal;
+#use lib qw{lib};
+#use IPC::RunExternal;
 
 my $EXIT_STATUS_OK = 1;
 my $EXIT_STATUS_TIMEOUT = 0;
