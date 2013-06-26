@@ -2,12 +2,11 @@ package IPC::RunExternal;
 
 =head1 NAME
 
-IPC::RunExternal - Execute external (shell) command and gather stdout and stderr!
-
+IPC::RunExternal - Execute external (shell) command and gather stdout and stderr
 
 =head1 VERSION
 
-Version 0.06
+Version 0.08
 
 
 =head1 SYNOPSIS
@@ -91,7 +90,7 @@ BEGIN {
 	use Exporter ();
 	our ($VERSION, @ISA, @EXPORT, @EXPORT_OK, %EXPORT_TAGS);
 
-	$VERSION     = 0.06;
+	$VERSION     = 0.08;
 
 	@ISA         = qw(Exporter DynaLoader);
 	@EXPORT      = qw(runexternal);
@@ -286,7 +285,7 @@ Depends mostly on IPC::Open3 working in the system.
 
 =head1 AUTHOR
 
-Mikko Koivunalho, C<< <mikko.koivunalho at iki.fi> >>
+ikko Koivunalho, C<< <mikko.koivunalho at iki.fi> >>
 
 
 =head1 BUGS

@@ -5,7 +5,7 @@
 # Revision     : 0.01
 # Author       : Mikko Koivunalho
 # Started      : 14.02.2011
-# Last edit    : $Date$
+# Last edit    : $Date: 2013-06-26 23:10:07 +0300 (Wed, 26 Jun 2013) $
 # Description  : Test IPC::RunExternal package.
 # Usage        : See below.
 #==============================================================================
