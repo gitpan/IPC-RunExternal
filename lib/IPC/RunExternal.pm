@@ -6,7 +6,7 @@ IPC::RunExternal - Execute external (shell) command and gather stdout and stderr
 
 =head1 VERSION
 
-Version 0.08
+Version 0.09
 
 
 =head1 SYNOPSIS
@@ -90,7 +90,7 @@ BEGIN {
 	use Exporter ();
 	our ($VERSION, @ISA, @EXPORT, @EXPORT_OK, %EXPORT_TAGS);
 
-	$VERSION     = 0.08;
+	$VERSION     = 0.09;
 
 	@ISA         = qw(Exporter DynaLoader);
 	@EXPORT      = qw(runexternal);

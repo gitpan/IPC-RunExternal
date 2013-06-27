@@ -1,15 +1,11 @@
 IPC-RunExternal
 
-The README is used to introduce the module and provide instructions on
-how to install the module, any machine dependencies it may have (for
-example C compilers and installed libraries) and any other information
-that should be provided before the module is installed.
+PC::RunExternal is for executing external operating system programs more conveniently than with `` (backticks) or exec/system, and without all the hassle of IPC::Open3.
 
-A README file is required for CPAN modules since CPAN extracts the README
-file from a module distribution so that people browsing the archive
-can use it to get an idea of the module's uses. It is usually a good idea
-to provide version information here so that people can decide whether
-fixes for the module are worth downloading.
+IPC::RunExternal allows: 1) Capture STDOUT and STDERR in scalar variables. 2) Capture both STDOUT and STDERR in one scalar variable, in the correct order. 3) Use timeout to break the execution of a program running too long. 4) Keep user happy by printing something (e.g. '.' or '#') every second. 5) Not happy with simply printing something? Then execute your own code (function) at every second while the program is running.
+
+
+Compatible only with Unix family of operating systems.
 
 
 INSTALLATION

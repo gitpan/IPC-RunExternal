@@ -63,7 +63,8 @@ my $allout = $EMPTY_STR;
 	($exit_code, $stdout, $stderr, $allout) = runexternal('/usr/bin/wc', 'QWERT', 2);
 	is($exit_code, $EXIT_STATUS_OK,                   "Wc Test result (1)");
 	#like($stdout, '/.*0.*1.*5.*/',          "Wc Test result (2)");
-	is($stdout, "      0       1       5\n",          "Wc Test result (2)");
+	like($stdout, '/      0       1       5/',          "Wc Test result (2)"); # Better a regexp. BSD Unix returns an extra prefix whitespace.
+	#is($stdout, "      0       1       5\n",          "Wc Test result (2)");
 	is($stderr, '',                                   "Wc Test result (3)");
 	# 11
 

@@ -1,5 +1,8 @@
 Revision history for IPC-RunExternal
 
+0.09    2013-Jun-27
+	- Used use-devel-assertos in Devel-CheckOS to package Devel::AssertOS Unix into the distribution.
+
 0.08    2013-Jun-26
 	- Change in MANIFEST.
 	- Changes in the repository:

@@ -1,3 +1,5 @@
+use lib inc; use Devel::AssertOS qw(Unix);
+
 use 5.006002;
 use strict;
 use warnings;
